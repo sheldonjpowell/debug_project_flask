@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<header class="banner">
+    <h1 class="header-text">This is a blog during a pandemic situation...</h1>
+</header>
+
+
+<h2>Hello there {{ current_user.username }}</h2>
+
+{% if current_user.is_authenticated %}
+
+{% for post in posts %}
+    <div class="container">
+        <h3>
+            <a href="{{ url_for('post_detail', post_id = post.id) }}">{{ post.title }}</a>
+        </h3>
+        <p>{{ post.content }}</p>
+    </div>
+{% endfor %}
+
+{% else %}
+<h2>Nothing To Show Here...</h2>
+
+{%endif %}
+
+{% endblock content %}

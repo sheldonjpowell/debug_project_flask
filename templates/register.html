@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1 class="justify-content-center">Register for new account </h1>
+
+<!-- Signup Form which comes from Flask Route-->
+<form action="" method="post">
+    {{ form.hidden_tag() }}
+    <div class="form-group">
+        <fieldset>
+            {{ form.username.label }}
+            {{ form.username(class="form-control", placeholder="UserName")}}
+        </fieldset>
+        <fieldset>
+            {{ form.email.label }}
+            {{ form.email(class="form-control", placeholder="Email") }}
+        </fieldset>
+        <fieldset>
+            {{ form.password.label }}
+            {{ form.password(class="form-control", placeholder="Password") }}
+        </fieldset>
+        <fieldset>
+            {{ form.confirm_pass.label }}
+            {{ form.confirm_pass(class="form-control", placeholder="Confirm Password") }}
+        </fieldset>
+        {{ form.submit(class="btn btn-success") }}
+    </div>
+</form>
+
+{% endblock content %}

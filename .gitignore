@@ -1,0 +1,8 @@
+.env
+app.db
+Procfile
+requirements.txt
+migrations
+.vscode
+__pycache__
+synth_venv/
